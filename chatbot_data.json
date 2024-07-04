@@ -1,0 +1,49 @@
+{
+  "intents": [
+    {
+      "name": "intro",
+      "patterns": [],
+      "responses": [
+        "Hello! I'm an AI assistant. How can I help you today?",
+        "Hi there! I'm here to assist you. What can I do for you?",
+        "Welcome! I'm an AI chatbot. How may I assist you?"
+      ]
+    },
+    {
+      "name": "greeting",
+      "patterns": ["hello", "hi", "hey"],
+      "responses": [
+        "Hello! It's great to see you. How can I assist you today?",
+        "Hi there! I hope you're having a wonderful day. What can I help you with?",
+        "Hey! Thanks for stopping by. How may I be of assistance?"
+      ]
+    },
+    {
+      "name": "product_info",
+      "patterns": ["tell me about your products", "what products do you offer"],
+      "responses": [
+        "We offer a wide range of cutting-edge technology products, including smartphones, laptops, tablets, and more. Which specific category are you interested in exploring?",
+        "Our product lineup includes the latest smartphones, high-performance laptops, versatile tablets, and other exciting gadgets. Is there a particular product you'd like to know more about?"
+      ],
+      "actions": ["list_products"]
+    },
+    {
+      "name": "product_details",
+      "patterns": ["tell me more about smartphones", "what are the features of laptops"],
+      "responses": [
+        "Our smartphones are designed to deliver exceptional performance and user experience. They feature high-resolution displays, powerful processors, advanced camera systems, and run on the latest operating systems. Would you like me to provide more details about a specific smartphone model?",
+        "Our laptops are engineered to cater to various needs, from everyday computing to demanding professional tasks. They boast high-performance processors, ample storage, and long-lasting batteries. Some models also feature dedicated graphics cards for enhanced visual performance. Let me know if you'd like more information about a particular laptop series."
+      ],
+      "actions": ["show_product_details"]
+    },
+    {
+      "name": "purchase_inquiry",
+      "patterns": ["how can I purchase a smartphone", "where can I buy a laptop"],
+      "responses": [
+        "You can conveniently purchase our products through our official website, where you'll find detailed product descriptions, pricing, and a secure checkout process. Additionally, our products are available at select authorized retailers nationwide. Would you like me to guide you through the online purchasing process or help you locate a nearby store?",
+        "Acquiring one of our smartphones or laptops is a breeze. You can visit our website to explore the available models, compare specifications, and make a purchase securely. If you prefer an in-store experience, I can assist you in finding an authorized retailer in your area. Let me know which option you prefer, and I'll be happy to help!"
+      ],
+      "actions": ["start_purchase_process"]
+    }
+  ]
+}
