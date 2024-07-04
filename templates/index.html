@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GPT Chatbot</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            setTimeout(function() {
+                $('#user-input').focus();
+            }, 5000);
+
+            $('#chat-form').submit(function(e) {
+                e.preventDefault();
+                var userMessage = $('#user-input').val();
+                $('#chat-history').append('<p><strong>You:</strong> ' + userMessage + '</p>');
+                $('#user-input').val('');
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/chat',
+                    data: JSON.stringify({'message': userMessage}),
+                    contentType: 'application/json',
+                    success: function(response) {
+                        $('#chat-history').append('<p><strong>AI:</strong> ' + response.message + '</p>');
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>GPT Chatbot</h1>
+    <div id="chat-history"></div>
+    <form id="chat-form">
+        <input type="text" id="user-input" name="user_input" placeholder="Type your message...">
+        <button type="submit">Send</button>
+    </form>
+</body>
+</html>
